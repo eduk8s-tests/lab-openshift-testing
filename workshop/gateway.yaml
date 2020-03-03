@@ -1,3 +1,3 @@
 panels:
 - name: Console
-  url: "$(ingress_protocol)://$(session_namespace)-console.$(ingress_domain)/"
+  url: "$(ingress_protocol)://$(session_namespace)-console.$(ingress_domain)/k8s/cluster/projects/$(session_namespace)"
