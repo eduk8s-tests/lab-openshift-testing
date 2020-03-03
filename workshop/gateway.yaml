@@ -1,6 +1,6 @@
 proxies:
-- name: console
-  port: 10083
+- name: openshift
+  port: 10090
 panels:
-- name: Console
+- name: OpenShift
   url: "$(ingress_protocol)://$(session_namespace)-console.$(ingress_domain)/k8s/cluster/projects/$(session_namespace)"
