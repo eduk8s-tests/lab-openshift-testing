@@ -41,4 +41,3 @@ spec:
             memory: 128Mi
     ingress:
     - name: console
-      port: 10083
