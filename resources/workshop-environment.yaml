@@ -1,0 +1,11 @@
+apiVersion: training.eduk8s.io/v1alpha1
+kind: WorkshopEnvironment
+metadata:
+  name: lab-openshift-sample
+spec:
+  workshop:
+    name: lab-openshift-sample
+  request:
+    token: lab-openshift-sample
+  session:
+    username: eduk8s

@@ -1,0 +1,44 @@
+apiVersion: training.eduk8s.io/v1alpha1
+kind: Workshop
+metadata:
+  name: lab-openshift-sample
+spec:
+  vendor: eduk8s.io
+  title: Markdown Sample
+  description: A sample workshop using Markdown
+  url: https://github.com/eduk8s-tests/lab-openshift-sample
+  image: quay.io/eduk8s/workshop-dashboard:master
+  session:
+    budget: medium
+    env:
+    - name: ENABLE_CONSOLE
+      value: false
+    - name: DOWNLOAD_URL
+      value: github.com/eduk8s-tests/lab-openshift-sample
+    patches:
+      containers:
+      - name: console
+        image: quay.io/openshift/origin-console:4.3
+        command:
+        - /opt/bridge/bin/bridge
+        env:
+        - name: BRIDGE_K8S_MODE
+          value: in-cluster
+        - name: BRIDGE_LISTEN
+          value: http://0.0.0.0:10083
+        - name: BRIDGE_BASE_ADDRESS
+          value: $(ingress_protocol)://$(session_namespace)-console/
+        - name: BRIDGE_PUBLIC_DIR
+          value: /opt/bridge/static
+        - name: BRIDGE_USER_AUTH
+          value: disabled
+        - name: BRIDGE_BRANDING
+          value: openshift
+        resources:
+          limits:
+            memory: 128Mi
+          requests:
+            memory: 128Mi
+    ingress:
+    - name: console
+      port: 10083
