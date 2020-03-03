@@ -11,8 +11,8 @@ spec:
   session:
     budget: medium
     env:
-    - name: ENABLE_CONSOLE
-      value: "false"
+    #- name: ENABLE_CONSOLE
+    #  value: "false"
     - name: DOWNLOAD_URL
       value: github.com/eduk8s-tests/lab-openshift-sample
     patches:
@@ -25,7 +25,7 @@ spec:
         - name: BRIDGE_K8S_MODE
           value: in-cluster
         - name: BRIDGE_LISTEN
-          value: http://0.0.0.0:10090
+          value: http://127.0.0.1:10090
         - name: BRIDGE_BASE_ADDRESS
           value: $(ingress_protocol)://$(session_namespace)-console/
         - name: BRIDGE_PUBLIC_DIR
