@@ -12,7 +12,7 @@ spec:
     budget: medium
     env:
     - name: ENABLE_CONSOLE
-      value: false
+      value: "false"
     - name: DOWNLOAD_URL
       value: github.com/eduk8s-tests/lab-openshift-sample
     patches:
