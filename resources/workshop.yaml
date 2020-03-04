@@ -4,17 +4,15 @@ metadata:
   name: lab-openshift-sample
 spec:
   vendor: eduk8s.io
-  title: Markdown Sample
-  description: A sample workshop using Markdown
-  url: https://github.com/eduk8s-tests/lab-openshift-sample
-  image: quay.io/eduk8s/workshop-dashboard:master
+  title: Testing of OpenShift
+  description: A sample workshop using the OpenShift web console
+  url: https://github.com/eduk8s/lab-openshift-sample
+  image: quay.io/eduk8s/lab-openshift-sample:master
   session:
-    budget: medium
-    env:
+    budget: default
+    #env:
     #- name: ENABLE_CONSOLE
     #  value: "false"
-    - name: DOWNLOAD_URL
-      value: github.com/eduk8s-tests/lab-openshift-sample
     patches:
       containers:
       - name: console
