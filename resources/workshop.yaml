@@ -10,32 +10,9 @@ spec:
   image: quay.io/eduk8s/lab-openshift-sample:master
   session:
     budget: default
-    #env:
-    #- name: ENABLE_CONSOLE
-    #  value: "false"
-    patches:
-      containers:
-      - name: console
-        image: quay.io/openshift/origin-console:4.3
-        command:
-        - /opt/bridge/bin/bridge
-        env:
-        - name: BRIDGE_K8S_MODE
-          value: in-cluster
-        - name: BRIDGE_LISTEN
-          value: http://127.0.0.1:10090
-        - name: BRIDGE_BASE_ADDRESS
-          value: $(ingress_protocol)://$(session_namespace)-console/
-        - name: BRIDGE_PUBLIC_DIR
-          value: /opt/bridge/static
-        - name: BRIDGE_USER_AUTH
-          value: disabled
-        - name: BRIDGE_BRANDING
-          value: openshift
-        resources:
-          limits:
-            memory: 128Mi
-          requests:
-            memory: 128Mi
-    ingress:
-    - name: openshift
+    applications:
+      console:
+        enabled: true
+        vendor: openshift
+        openshift:
+          version: 4.3
