@@ -1,9 +1,9 @@
 apiVersion: training.eduk8s.io/v1alpha1
 kind: TrainingPortal
 metadata:
-  name: lab-openshift-sample
+  name: lab-openshift-testing
 spec:
   portal:
     capacity: 1
   workshops:
-  - name: lab-openshift-sample
+  - name: lab-openshift-testing

@@ -1,13 +1,13 @@
 apiVersion: training.eduk8s.io/v1alpha1
 kind: Workshop
 metadata:
-  name: lab-openshift-sample
+  name: lab-openshift-testing
 spec:
   vendor: eduk8s.io
   title: Testing of OpenShift
   description: A sample workshop using the OpenShift web console
-  url: https://github.com/eduk8s/lab-openshift-sample
-  image: quay.io/eduk8s/lab-openshift-sample:master
+  url: https://github.com/eduk8s/lab-openshift-testing
+  image: quay.io/eduk8s/workshop-dashboard:master
   session:
     budget: default
     applications:
@@ -16,3 +16,6 @@ spec:
         vendor: openshift
         openshift:
           version: "4.3"
+    env:
+    - name: DOWNLOAD_URL
+      value: github.com/eduk8s-tests/lab-openshift-testing

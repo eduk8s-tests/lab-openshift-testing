@@ -1,8 +1,8 @@
 apiVersion: training.eduk8s.io/v1alpha1
 kind: WorkshopRequest
 metadata:
-  name: lab-openshift-sample
+  name: lab-openshift-testing
 spec:
   environment:
-    name: lab-openshift-sample
-    token: lab-openshift-sample
+    name: lab-openshift-testing
+    token: lab-openshift-testing
