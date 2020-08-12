@@ -8,15 +8,13 @@ spec:
   description: A sample workshop using the OpenShift web console
   url: https://github.com/eduk8s/lab-openshift-testing
   content:
-    image: quay.io/eduk8s/workshop-dashboard:master
+    files: github.com/eduk8s-tests/lab-openshift-testing
   session:
-    budget: default
+    namespaces:
+      budget: default
     applications:
       console:
         enabled: true
         vendor: openshift
         openshift:
           version: "4.3"
-    env:
-    - name: DOWNLOAD_URL
-      value: github.com/eduk8s-tests/lab-openshift-testing
